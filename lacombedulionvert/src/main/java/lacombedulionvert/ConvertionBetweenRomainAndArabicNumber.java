@@ -8,7 +8,10 @@ public class ConvertionBetweenRomainAndArabicNumber {
 	public String ConvertFromArabicToRomain(int arabicNumber) {
 		this.builder = new StringBuilder();
 		
-		if(arabicNumber < 13) {
+		if(arabicNumber == 40) {
+			this.builder.append("XL");
+		}
+		else if(arabicNumber > 13) {
 			int quotient = arabicNumber / ConvertionBetweenRomainAndArabicNumber.X;
 			
 			for(int i = 0; i < quotient; i++) {
