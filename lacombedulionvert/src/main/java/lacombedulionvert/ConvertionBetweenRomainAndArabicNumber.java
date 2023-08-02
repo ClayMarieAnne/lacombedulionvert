@@ -4,12 +4,31 @@ public class ConvertionBetweenRomainAndArabicNumber {
 	StringBuilder builder;
 	private static int V = 5;
 	private static int X = 10;
-
+	
 	public String ConvertFromArabicToRomain(int arabicNumber) {
 		this.builder = new StringBuilder();
+
+		if(50 <= arabicNumber) {
+			builder.append("L");
+			
+			if(50 < arabicNumber) {
+				this.ConvertWithL(arabicNumber - 50);
+			}
+		}	
+		else {
+			this.ConvertWithL(arabicNumber);
+		}	
 		
-		if(arabicNumber == 40) {
-			this.builder.append("XL");
+		return builder.toString();
+	}
+
+	private void ConvertWithL(int arabicNumber) {
+		if(40 <= arabicNumber) {
+			builder.append("XL");
+			
+			if(40 < arabicNumber) {
+				this.ConvertWithXAndV(arabicNumber - 40);
+			}
 		}
 		else if(arabicNumber > 13) {
 			int quotient = arabicNumber / ConvertionBetweenRomainAndArabicNumber.X;
@@ -19,16 +38,18 @@ public class ConvertionBetweenRomainAndArabicNumber {
 			}
 			
 			int resteX = arabicNumber % ConvertionBetweenRomainAndArabicNumber.X;
-			this.ConvertBase(resteX);
+			this.ConvertWithXAndV(resteX);
 		}
 		else {
-			this.ConvertBase(arabicNumber);
-		}		
-		
-		return builder.toString();
+			this.ConvertWithXAndV(arabicNumber);
+		}
 	}
 	
-	private void ConvertBase(int arabicNumber) {
+	/**
+	 * Les chiffres de 4 à 13 (avec ConvertWithI de 1 à 3 et de 11 à 13)
+	 * @param arabicNumber le nombre en écriture arabe
+	 */
+	private void ConvertWithXAndV(int arabicNumber) {
 		if(0 < arabicNumber && arabicNumber < 4) {
 			this.ConvertWithI(arabicNumber);
 		}
@@ -54,6 +75,10 @@ public class ConvertionBetweenRomainAndArabicNumber {
 		}
 	}
 
+	/**
+	 * Les chiffres de 1 à 3 (qui s'écrivent uniquement avec des I)
+	 * @param arabicNumber le nombre en écriture arabe
+	 */
 	private void ConvertWithI(int arabicNumber) {
 		for(int i = 0; i < arabicNumber; i++) {
 			builder.append("I");
