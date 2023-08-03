@@ -174,4 +174,29 @@ class ConvertionBetweenRomainAndArabicNumberTest {
 	public void testSimpleCM() {
 		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(900).equals("CM"));
 	}
+	
+	@Test
+	public void testSimpleCMLXXXIII() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(983).equals("CMLXXXIII"));
+	}
+	
+	@Test
+	public void testSimpleMV() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(1005).equals("MV"));
+	}
+	
+	@Test
+	public void testSimpleMCCCLII() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(1352).equals("MCCCLII"));
+	}
+	
+	@Test
+	public void testSimpleMMI() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(2001).equals("MMI"));
+	}
+	
+	@Test
+	public void testSimpleMMMCMXCIX() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(3999).equals("MMMCMXCIX"));
+	}
 }
