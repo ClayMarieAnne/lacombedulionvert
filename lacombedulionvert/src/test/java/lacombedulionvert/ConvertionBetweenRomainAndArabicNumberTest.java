@@ -63,6 +63,68 @@ class ConvertionBetweenRomainAndArabicNumberTest {
 	// Test X with previous
 	@Test
 	public void testSimpleXIV() {
-		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(1).equals("XIV"));
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(14).equals("XIV"));
+	}
+	
+	@Test
+	public void testSimpleXV() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(15).equals("XV"));
+	}
+	
+	@Test
+	public void testSimpleXVI() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(16).equals("XVI"));
+	}
+	
+	@Test
+	public void testSimpleXVII() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(17).equals("XVII"));
+	}
+	
+	@Test
+	public void testSimpleXIX() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(19).equals("XIX"));
+	}
+	
+	@Test
+	public void testSimpleXX() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(20).equals("XX"));
+	}
+	
+	@Test
+	public void testSimpleXXI() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(21).equals("XXI"));
+	}
+	
+	// Test le cas de 40 (apparition du L pour les 50)
+	@Test
+	public void testSimpleXL() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(40).equals("XL"));
+	}
+	
+	@Test
+	public void testSimpleXLV() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(45).equals("XLV"));
+	}
+	
+	@Test
+	public void testSimpleL() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(50).equals("L"));
+	}
+	
+	@Test
+	public void testSimpleLXXVII() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(77).equals("LXXVII"));
+	}
+	
+	@Test
+	public void testSimpleLXXXIV() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(84).equals("LXXXIV"));
+	}
+	
+	// Test pour le 100 C
+	@Test
+	public void testSimpleC() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(100).equals("C"));
 	}
 }
