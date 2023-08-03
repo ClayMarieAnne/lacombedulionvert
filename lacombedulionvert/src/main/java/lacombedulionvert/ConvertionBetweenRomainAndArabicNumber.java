@@ -8,7 +8,6 @@ import java.util.Map;
  */
 public class ConvertionBetweenRomainAndArabicNumber {
 	Map<Integer, String> RomainConstant = new LinkedHashMap<Integer, String>();
-	Map<Integer, String> RomainException = new LinkedHashMap<Integer, String>();
 	
 	public ConvertionBetweenRomainAndArabicNumber(){
 		this.RomainConstant.put(1000, "M");
@@ -20,11 +19,10 @@ public class ConvertionBetweenRomainAndArabicNumber {
 		this.RomainConstant.put(50, "L");
 		this.RomainConstant.put(40, "XL");
 		this.RomainConstant.put(10, "X");
+		this.RomainConstant.put(9, "IX");
 		this.RomainConstant.put(5, "V");
+		this.RomainConstant.put(4, "IV");
 		this.RomainConstant.put(1, "I");
-		
-		this.RomainException.put(9, "IX");
-		this.RomainException.put(4, "IV");
 	}
 	
 	public String ConvertFromArabicToRomain(int arabicNumber) {
@@ -39,11 +37,6 @@ public class ConvertionBetweenRomainAndArabicNumber {
 			}
 			
 			reste = reste % entry.getKey();
-			
-			if(this.RomainException.containsKey(reste)) {
-				builder.append(this.RomainException.get(reste));
-				reste = 0;
-			}
 			
 			if(reste == 0) {
 				break;
