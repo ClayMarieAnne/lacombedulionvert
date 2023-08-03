@@ -11,6 +11,10 @@ public class ConvertionBetweenRomainAndArabicNumber {
 	Map<Integer, String> RomainException = new LinkedHashMap<Integer, String>();
 	
 	public ConvertionBetweenRomainAndArabicNumber(){
+		this.RomainConstant.put(1000, "M");
+		this.RomainConstant.put(900, "CM");
+		this.RomainConstant.put(500, "D");
+		this.RomainConstant.put(400, "CD");
 		this.RomainConstant.put(100, "C");
 		this.RomainConstant.put(90, "XC");
 		this.RomainConstant.put(50, "L");

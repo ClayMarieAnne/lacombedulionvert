@@ -148,4 +148,30 @@ class ConvertionBetweenRomainAndArabicNumberTest {
 	public void testSimpleD() {
 		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(500).equals("D"));
 	}
+	
+	@Test
+	public void testSimpleCD() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(400).equals("CD"));
+	}
+	
+	@Test
+	public void testSimpleCDLXXVIII() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(478).equals("CDLXXVIII"));
+	}
+	
+	@Test
+	public void testSimpleDCCLII() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(752).equals("DCCLII"));
+	}
+	
+	// Test 1000 M
+	@Test
+	public void testSimpleM() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(1000).equals("M"));
+	}
+	
+	@Test
+	public void testSimpleCM() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(900).equals("CM"));
+	}
 }
