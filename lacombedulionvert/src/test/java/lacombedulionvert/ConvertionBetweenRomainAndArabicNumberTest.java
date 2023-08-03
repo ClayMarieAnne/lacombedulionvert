@@ -127,4 +127,25 @@ class ConvertionBetweenRomainAndArabicNumberTest {
 	public void testSimpleC() {
 		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(100).equals("C"));
 	}
+	
+	@Test
+	public void testSimpleXC() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(90).equals("XC"));
+	}
+	
+	@Test
+	public void testSimpleXCIX() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(99).equals("XCIX"));
+	}
+	
+	@Test
+	public void testSimpleCCCXLIV() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(344).equals("CCCXLIV"));
+	}
+	
+	// Test 500 
+	@Test
+	public void testSimpleD() {
+		assertTrue(convertionBetweenRomainAndArabicNumber.ConvertFromArabicToRomain(500).equals("D"));
+	}
 }
